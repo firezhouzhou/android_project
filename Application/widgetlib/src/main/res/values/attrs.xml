@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MultiChildContainer">
+        <!-- 布局方向 -->
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        
+        <!-- 子控件间距 -->
+        <attr name="childSpacing" format="dimension" />
+        
+        <!-- 子控件对齐方式 -->
+        <attr name="childGravity" format="enum">
+            <enum name="start" value="0" />
+            <enum name="center" value="1" />
+            <enum name="end" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

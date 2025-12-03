@@ -1,7 +1,9 @@
 package com.baidu.application
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -10,7 +12,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setupButton()
         setupRecyclerView()
+    }
+
+    private fun setupButton() {
+        val btnWidgetDemo = findViewById<Button>(R.id.btn_widget_demo)
+        btnWidgetDemo.setOnClickListener {
+            val intent = Intent(this, WidgetDemoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupRecyclerView() {
