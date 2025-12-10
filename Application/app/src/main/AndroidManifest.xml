@@ -4,6 +4,7 @@
     package="com.baidu.application">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -26,6 +27,11 @@
         <activity
             android:name=".WidgetDemoActivity"
             android:exported="false" />
+        
+        <activity
+            android:name=".LogDemoActivity"
+            android:exported="false"
+            android:label="日志模块测试" />
     </application>
 
 </manifest>

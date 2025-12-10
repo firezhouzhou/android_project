@@ -22,6 +22,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, WidgetDemoActivity::class.java)
             startActivity(intent)
         }
+        
+        val btnLogDemo = findViewById<Button>(R.id.btn_log_demo)
+        btnLogDemo.setOnClickListener {
+            val intent = Intent(this, LogDemoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupRecyclerView() {
