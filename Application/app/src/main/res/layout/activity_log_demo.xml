@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".LogDemoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="日志模块测试"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#333333"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 基础日志按钮 -->
+        <Button
+            android:id="@+id/btn_basic_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="测试基础日志"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- JSON 日志按钮 -->
+        <Button
+            android:id="@+id/btn_json_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="测试 JSON 日志"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_basic_log"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- XML 日志按钮 -->
+        <Button
+            android:id="@+id/btn_xml_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="测试 XML 日志"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_json_log"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 异常日志按钮 -->
+        <Button
+            android:id="@+id/btn_exception_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="测试异常日志"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_xml_log"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 性能测试按钮 -->
+        <Button
+            android:id="@+id/btn_performance_test"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="性能测试（10000条）"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_exception_log"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 查看日志文件按钮 -->
+        <Button
+            android:id="@+id/btn_view_logs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="查看日志文件"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_performance_test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 输出结果区域 -->
+        <TextView
+            android:id="@+id/tv_output_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="输出结果："
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintTop_toBottomOf="@id/btn_view_logs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
+
+        <!-- 输出文本框 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_output"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#F5F5F5"
+            app:layout_constraintTop_toBottomOf="@id/tv_output_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tv_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击上方按钮测试日志功能..."
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:padding="16dp"
+                android:minHeight="200dp"
+                android:gravity="start|top"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 说明文本 -->
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="💡 提示：日志会同时输出到 Logcat 和文件\n📁 日志文件位置：/data/data/包名/files/logs/"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:lineSpacingExtra="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_output"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
