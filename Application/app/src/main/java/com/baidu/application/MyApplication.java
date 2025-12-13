@@ -4,6 +4,8 @@ import android.app.Application;
 import com.baidu.application.logger.LogConfig;
 import com.baidu.application.logger.LogLevel;
 import com.baidu.application.logger.LogManager;
+import com.baidu.application.analytics.Analytics;
+import com.baidu.application.analytics.AnalyticsConfig;
 
 /**
  * 应用程序入口
@@ -19,6 +21,9 @@ public class MyApplication extends Application {
         
         // 初始化日志模块
         initLogger();
+        
+        // 初始化埋点模块
+        initAnalytics();
     }
     
     /**
@@ -41,5 +46,27 @@ public class MyApplication extends Application {
         
         // 记录应用启动
         LogManager.getInstance().i("Application", "应用启动成功");
+    }
+    
+    /**
+     * 初始化埋点模块
+     */
+    private void initAnalytics() {
+        AnalyticsConfig config = new AnalyticsConfig.Builder(this)
+                .setAppKey("demo_app_key_12345")                    // 应用密钥
+                .setUploadUrl("https://api.example.com/analytics")  // 上传地址
+                .setEnableDebug(true)                               // 调试模式
+                .setBatchSize(20)                                   // 批量上传 20 条
+                .setUploadInterval(30000)                           // 30 秒上传一次
+                .setEnableCompression(true)                         // 启用压缩
+                .setEnableEncryption(false)                         // 关闭加密（演示用）
+                .setWifiOnly(false)                                 // 允许移动网络上传
+                .setRetryCount(3)                                   // 失败重试 3 次
+                .build();
+        
+        Analytics.init(config);
+        
+        // 记录应用启动事件
+        LogManager.getInstance().i("Application", "埋点模块初始化成功");
     }
 }

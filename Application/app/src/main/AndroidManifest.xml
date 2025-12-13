@@ -32,6 +32,11 @@
             android:name=".LogDemoActivity"
             android:exported="false"
             android:label="日志模块测试" />
+        
+        <activity
+            android:name=".AnalyticsDemoActivity"
+            android:exported="false"
+            android:label="埋点模块测试" />
     </application>
 
 </manifest>

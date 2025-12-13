@@ -28,6 +28,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
+    <Button
+        android:id="@+id/btn_analytics_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看埋点模块 Demo"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_log_demo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_root"
         android:layout_width="0dp"
@@ -38,6 +49,6 @@
         android:clipToPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_log_demo"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_analytics_demo"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

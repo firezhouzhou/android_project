@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="埋点系统测试"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_basic_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试基础事件"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_event_with_params"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试带参数事件"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_user_property"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="设置用户属性"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_batch_events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="批量事件测试（100条）"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_flush"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="立即上传"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_view_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="查看统计信息"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_clear_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="清空缓存"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_privacy_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="切换隐私开关"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="输出结果："
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_analytics_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击上方按钮测试埋点功能..."
+                android:textSize="12sp"
+                android:textColor="#666666" />
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
